@@ -28,6 +28,9 @@ SPDX-License-Identifier: MIT
 
 #include "Alumno.h"
 #include <stdio.h>
+#include <stdlib.h>
+
+#define FIELD_SIZE 50
 
 /* === Macros definitions ====================================================================== */
 
@@ -36,8 +39,8 @@ SPDX-License-Identifier: MIT
 /* === Private variable declarations =========================================================== */
 
 struct alumno_s{
-    char apellido[50];//!< 50 bytes para apellido
-    char nombre[50];//!< 50 bytes para nombre
+    char apellido[FIELD_SIZE];//!< 50 bytes para apellido
+    char nombre[FIELD_SIZE];//!< 50 bytes para nombre
     uint32_t documento;//!<  32bits para documento
     //***// bool ocupado;
 };
@@ -95,8 +98,8 @@ int GetDocumento(alumno_t alumno){
     return NULL;
 
 }
-
-int Serializar(const struct alumno_s * alumno, char cadena[], uint32_t espacio){
+//const struct alumno_s *
+int Serializar(alumno_t alumno, char cadena[], uint32_t espacio){
     int disponibles = espacio;
     int resultado;
 

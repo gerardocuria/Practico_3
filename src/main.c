@@ -43,12 +43,12 @@ SPDX-License-Identifier: MIT
 /* === Public variable definitions ============================================================= */
 
 int main(void){
-
+/*
     static const struct alumno_s yo = {
         .apellido = "Curia",
         .nombre = "Gerardo",
         .documento = 41495098,
-     };
+     };*/
      /*defino yo como estructura alumno_s*/
 
     /*strncpy(yo.apellido, "Curia", sizeof(yo.apellido)); esto ya no sirve*/
@@ -72,7 +72,7 @@ int main(void){
     char cadena[128];
     alumno_t yo = CrearAlumno("Curia","Gerardo",41495098);
 
-    if (Serializar(&yo, cadena, sizeof(cadena)) >= 0){
+    if (Serializar(yo, cadena, sizeof(cadena)) >= 0){
     /*Serializar(direccion de memoria de yo, direccion de memoria de cadena (donde guardo la cadena en formato json), tamaño de la cadena (si o si sizeof porque el tamaño solo se da en tiempo de ejecucion));*/
         printf ("%s\n", cadena);
     }else{

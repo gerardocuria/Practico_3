@@ -59,13 +59,17 @@ typedef struct alumno_s * alumno_t;
 esta funcion toma los datos del alumno, luego completa una cadena con los datos del alumno en formato json.
 */
 
-int Serializar(const struct alumno_s * alumno, char cadena[], uint32_t espacio);
+int Serializar(alumno_t alumno, char cadena[], uint32_t espacio);
 /*alumno es un puntero a el tipo de dato alumno_t*/
 /*de esta manera paso la direccion de inicio de la estructura y no la estructura entera porque la estructura es grande para andar copiandola*/
 /*la marco como const para indicar que no cambio el contenido de la estructura solo la leo*/
 /*el const va a la izquierda para que sea constante la estructura, si estuviera a la derecha seria constante el puntero*/
 /*un array es un puntero al primer elemeno por lo que char cadena[] es lo mismo que char cadena*/
 alumno_t CrearAlumno(char * apellido, char * nombre, int documento);
+/*toma tres parámetros: dos cadenas de caracteres (apellido y nombre) y un entero (documento). 
+Esta función devuelve un puntero a un objeto de tipo alumno_t.*/
+/*esta función aloca memoria dinámicamente para un nuevo objeto alumno_t, 
+configure sus campos con los datos proporcionados y luego devuelva el puntero a este objeto. */
 
 int GetCompleto(alumno_t alumno, char cadena[], uint32_t espacio);
 
